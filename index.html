@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio | Seu Nome</title>
+  <meta name="description" content="Portfólio acadêmico e profissional com projetos, habilidades e contato."/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Seu Nome</span>
+      </a>
+
+      <nav class="nav" aria-label="Menu principal">
+        <button class="nav__toggle" id="btnMenu" aria-expanded="false" aria-controls="menuLinks">
+          ☰ Menu
+        </button>
+        <div class="nav__links" id="menuLinks">
+          <a href="#sobre">Sobre</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#eventos">Eventos</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="inicio" class="hero">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <p class="badge">Portfólio Acadêmico</p>
+        <h1>Olá! Eu sou <span class="highlight">Seu Nome</span>.</h1>
+        <p class="lead">
+          Estudante de <strong>Seu Curso</strong> • Foco em <strong>Front-end</strong>, <strong>Back-end</strong> e projetos práticos.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn" href="#projetos">Ver projetos</a>
+          <a class="btn btn--ghost" href="#contato">Falar comigo</a>
+        </div>
+
+        <div class="hero__stats" role="list">
+          <div class="stat" role="listitem">
+            <span class="stat__num" data-counter="6">0</span>
+            <span class="stat__label">Projetos</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat__num" data-counter="3">0</span>
+            <span class="stat__label">Certificações</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat__num" data-counter="12">0</span>
+            <span class="stat__label">Meses estudando</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero__card" aria-label="Cartão de perfil">
+        <div class="avatar" aria-hidden="true">
+          <!-- Se quiser usar foto: coloque img/perfil.jpg e descomente abaixo -->
+          <!-- <img src="img/perfil.jpg" alt="Foto de perfil"> -->
+          <span>🙂</span>
+        </div>
+
+        <div class="card">
+          <h2>Resumo rápido</h2>
+          <ul class="checklist">
+            <li>✅ HTML, CSS e JavaScript</li>
+            <li>✅ Projetos com GitHub</li>
+            <li>✅ Interesse em estágios/colaborações</li>
+          </ul>
+
+          <div class="card__row">
+            <a class="chip" href="https://github.com/seuusuario" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="chip" href="https://www.linkedin.com/in/seuusuario" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Sobre -->
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Sobre mim</h2>
+        <p>Uma apresentação clara e objetiva (3–6 linhas).</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="panel">
+          <h3>Minha história</h3>
+          <p>
+            Escreva aqui um resumo do seu objetivo: estágio, primeiro emprego, freela, etc.
+            Fale rapidamente do que você gosta de construir e aprender.
+          </p>
+          <p class="muted">
+            Dica: use dados reais (curso, semestre, instituição, metas).
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Formação</h3>
+          <ul class="list">
+            <li><strong>Curso:</strong> Nome do curso — Instituição (Ano–Ano)</li>
+            <li><strong>Curso:</strong> Nome do curso — Instituição (Ano–Ano)</li>
+            <li><strong>Extras:</strong> Monitoria, iniciação, projetos integradores…</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades -->
+  <section id="habilidades" class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <h2>Habilidades</h2>
+        <p>Técnicas e comportamentais (soft skills).</p>
+      </div>
+
+      <div class="grid grid--3">
+        <div class="panel">
+          <h3>Front-end</h3>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Responsivo</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Back-end</h3>
+          <div class="tags">
+            <span class="tag">Node.js (básico)</span>
+            <span class="tag">APIs (básico)</span>
+            <span class="tag">Banco de dados</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Soft Skills</h3>
+          <div class="tags">
+            <span class="tag">Comunicação</span>
+            <span class="tag">Organização</span>
+            <span class="tag">Trabalho em equipe</span>
+            <span class="tag">Aprendizado contínuo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="projetos" class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Projetos</h2>
+        <p>Adicione links do GitHub e uma demo (se tiver).</p>
+      </div>
+
+      <div class="filters" aria-label="Filtros de projetos">
+        <button class="filter is-active" data-filter="todos">Todos</button>
+        <button class="filter" data-filter="frontend">Front-end</button>
+        <button class="filter" data-filter="backend">Back-end</button>
+        <button class="filter" data-filter="outros">Outros</button>
+      </div>
+
+      <div class="grid grid--3" id="projetosGrid">
+        <!-- Card 1 -->
+        <article class="project" data-cat="frontend">
+          <h3>Portfólio Acadêmico</h3>
+          <p>Site responsivo com seções, filtros e modo escuro.</p>
+          <div class="project__meta">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">JS</span>
+          </div>
+          <div class="project__links">
+            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="#" target="_blank" rel="noreferrer">Demo</a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="project" data-cat="backend">
+          <h3>API de Tarefas</h3>
+          <p>CRUD simples com rotas e validações básicas.</p>
+          <div class="project__meta">
+            <span class="pill">Node</span>
+            <span class="pill">Express</span>
+          </div>
+          <div class="project__links">
+            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="#" target="_blank" rel="noreferrer">Docs</a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="project" data-cat="outros">
+          <h3>Dashboard de Estudos</h3>
+          <p>Organização de rotina com metas e checklist.</p>
+          <div class="project__meta">
+            <span class="pill">JS</span>
+            <span class="pill">UI</span>
+          </div>
+          <div class="project__links">
+            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="#" target="_blank" rel="noreferrer">Demo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eventos -->
+  <section id="eventos" class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <h2>Participações em eventos</h2>
+        <p>Maratona de programação, hackathons, semanas acadêmicas, palestras.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline__item">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <h3>Maratona de Programação — 2025</h3>
+            <p class="muted">Equipe X • Problemas resolvidos: 3 • Linguagem: C/JS</p>
+            <p>Resumo do que você aprendeu e sua contribuição.</p>
+          </div>
+        </div>
+
+        <div class="timeline__item">
+          <div class="timeline__dot" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <h3>Semana de Tecnologia — 2024</h3>
+            <p class="muted">Palestras e oficinas • Tema: Web/IA</p>
+            <p>Resumo rápido do evento e o que você aplicou depois.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Contato</h2>
+        <p>Deixe seus links e/ou um formulário (simples).</p>
+      </div>
+
+      <div class="grid grid--2">
+        <div class="panel">
+          <h3>Me encontre</h3>
+          <ul class="list">
+            <li><strong>Email:</strong> seuemail@exemplo.com</li>
+            <li><strong>WhatsApp:</strong> (xx) xxxxx-xxxx</li>
+            <li><strong>GitHub:</strong> github.com/seuusuario</li>
+            <li><strong>LinkedIn:</strong> linkedin.com/in/seuusuario</li>
+          </ul>
+          <p class="muted">Dica: mantenha seus links atualizados.</p>
+        </div>
+
+        <form class="panel form" id="contactForm">
+          <h3>Mensagem</h3>
+
+          <label>
+            Nome
+            <input type="text" name="nome" placeholder="Seu nome" required />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" placeholder="seuemail@exemplo.com" required />
+          </label>
+
+          <label>
+            Mensagem
+            <textarea name="msg" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+          </label>
+
+          <button class="btn" type="submit">Enviar</button>
+          <p class="muted" id="formMsg" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="ano"></span> Seu Nome • Feito com HTML, CSS e JS</p>
+      <button class="btn btn--ghost" id="btnTheme" type="button" aria-label="Alternar tema">🌙/☀️</button>
+      <a class="toTop" href="#inicio" aria-label="Voltar ao topo">↑ Topo</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
