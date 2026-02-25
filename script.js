@@ -59,7 +59,7 @@ document.querySelectorAll('[data-action="toggle"]').forEach(btn => {
   });
 });
 
-// ====== Filtro por disciplina (avisos)
+// ====== Filtro por disciplina (avisos) + Busca geral
 const filterBtns = document.querySelectorAll(".filter");
 const notes = document.querySelectorAll(".note");
 
