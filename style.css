@@ -128,12 +128,51 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
 .panel--glass{
   background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 78%, transparent), color-mix(in srgb, var(--panel) 92%, transparent));
 }
-.steps{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.chip{
-  padding:8px 10px;border-radius:999px;border:1px solid var(--line);
-  color:var(--muted)
+.panel--stack{display:flex;flex-direction:column;gap:12px}
+.panel__head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.divider{height:1px;background:var(--line);border-radius:999px}
+.small{font-size:.92rem}
+
+/* Deliveries */
+.deliveries{display:grid;gap:10px}
+.delivery{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background: color-mix(in srgb, var(--panel) 70%, transparent);
 }
+.delivery__left{display:flex;flex-direction:column;gap:3px}
+.delivery__date{font-weight:900}
+.delivery__title{color:var(--muted);font-weight:700}
+.delivery__tag{
+  padding:7px 10px;border-radius:999px;border:1px solid var(--line);
+  font-weight:900;color:var(--text);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+/* Quick */
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.quick__btn{
+  display:flex;align-items:center;justify-content:center;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: transparent;
+  color:var(--text);
+  font-weight:900;
+}
+.quick__btn:hover{
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+/* Pills/Chips */
+.pill{
+  padding:7px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);
+  background: transparent;font-weight:700;font-size:.9rem;
+}
+.pill--ok{color: color-mix(in srgb, var(--accent2) 60%, var(--text));}
+.muted{color:var(--muted)}
 
 /* Sections */
 .section{padding:56px 0}
@@ -165,16 +204,9 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
   border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
 }
 .cardDisc__top{display:flex;gap:8px;flex-wrap:wrap;justify-content:space-between;align-items:center}
-.pill{
-  padding:7px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);
-  background: transparent;font-weight:700;font-size:.9rem;
-}
-.pill--ok{color: color-mix(in srgb, var(--accent2) 60%, var(--text));}
 .cardDisc h3{margin:10px 0 6px}
 .cardDisc p{margin:0;color:var(--muted);line-height:1.45}
-.cardDisc__footer{
-  display:flex;align-items:center;justify-content:space-between;margin-top:12px;
-}
+.cardDisc__footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
 .badgeMini{
   width:44px;height:44px;border-radius:14px;
   display:flex;align-items:center;justify-content:center;
@@ -182,8 +214,6 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 22%, transparent), color-mix(in srgb, var(--accent2) 18%, transparent));
   font-weight:900;
 }
-.muted{color:var(--muted)}
-.hint{margin-top:14px}
 
 /* Toolbar + filters */
 .toolbar{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin:14px 0 18px}
@@ -223,10 +253,7 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
 }
 .note--red{ outline: 2px solid rgba(255,90,102,.25); }
 .note--blue{ outline: 2px solid rgba(59,130,246,.22); }
-.note.is-done{
-  opacity:.7;
-  filter: grayscale(.2);
-}
+.note.is-done{ opacity:.7; filter: grayscale(.2); }
 .note__head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
 .note__tag{font-weight:900}
 .note__date{color:var(--muted);font-weight:800}
@@ -293,6 +320,7 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
   .hero__grid{grid-template-columns:1fr}
   .board{grid-template-columns:1fr}
   .grid--3{grid-template-columns:1fr}
+  .quick{grid-template-columns:1fr}
   .nav__toggle{display:inline-flex}
   .nav__links{
     display:none;
