@@ -66,21 +66,65 @@
         </div>
       </section>
 
+      <!-- Painel Útil (substitui o "Como usar") -->
       <aside class="hero__panel">
-        <div class="panel panel--glass">
-          <h2>📌 Como usar</h2>
-          <ol class="steps">
-            <li>Escolha a disciplina</li>
-            <li>Abra o repositório</li>
-            <li>Veja avisos e datas</li>
-            <li>Baixe materiais e atividades</li>
-          </ol>
-          <div class="chips">
-            <span class="chip">HTML</span>
-            <span class="chip">CSS</span>
-            <span class="chip">JavaScript</span>
-            <span class="chip">GitHub Pages</span>
+        <div class="panel panel--glass panel--stack">
+          <div class="panel__head">
+            <h2>📅 Próximas entregas</h2>
+            <span class="pill pill--ok">Atualize as datas</span>
           </div>
+
+          <div class="deliveries" role="list">
+            <div class="delivery" role="listitem">
+              <div class="delivery__left">
+                <span class="delivery__date">10/03</span>
+                <span class="delivery__title">Validação 1 — Gestão de Projetos</span>
+              </div>
+              <span class="delivery__tag">Prazo</span>
+            </div>
+
+            <div class="delivery" role="listitem">
+              <div class="delivery__left">
+                <span class="delivery__date">12/03</span>
+                <span class="delivery__title">Atividade 01 — Web II</span>
+              </div>
+              <span class="delivery__tag">Prazo</span>
+            </div>
+
+            <div class="delivery" role="listitem">
+              <div class="delivery__left">
+                <span class="delivery__date">15/03</span>
+                <span class="delivery__title">KPIs — Governança de TI</span>
+              </div>
+              <span class="delivery__tag">Entrega</span>
+            </div>
+
+            <div class="delivery" role="listitem">
+              <div class="delivery__left">
+                <span class="delivery__date">22/03</span>
+                <span class="delivery__title">Planilha — Informática na Logística</span>
+              </div>
+              <span class="delivery__tag">Atividade</span>
+            </div>
+          </div>
+
+          <div class="divider" aria-hidden="true"></div>
+
+          <div class="panel__head">
+            <h2>⚡ Acesso rápido</h2>
+            <span class="muted">atalhos úteis</span>
+          </div>
+
+          <div class="quick">
+            <!-- Troque os links conforme seu uso -->
+            <a class="quick__btn" href="#" target="_blank" rel="noreferrer">AVA</a>
+            <a class="quick__btn" href="mailto:seuemail@exemplo.com" target="_blank" rel="noreferrer">E-mail</a>
+            <a class="quick__btn" href="#" target="_blank" rel="noreferrer">Calendário</a>
+          </div>
+
+          <p class="muted small">
+            💡 Dica: use a busca no topo para filtrar disciplinas e avisos.
+          </p>
         </div>
       </aside>
     </div>
@@ -216,7 +260,6 @@
       </div>
 
       <div class="board" id="board">
-        <!-- Exemplo de avisos (edite à vontade) -->
         <article class="note note--blue" data-cat="gestao" data-text="Validação 1 do projeto: entregar escopo e cronograma.">
           <header class="note__head">
             <span class="note__tag">Gestão de Projetos</span>
@@ -329,11 +372,11 @@
         <a class="linkCard" href="https://github.com/" target="_blank" rel="noreferrer">
           <h3>GitHub</h3><p>Repositórios, issues, entregas e versionamento.</p>
         </a>
-        <a class="linkCard" href="https://chatgpt.com/" target="_blank" rel="noreferrer">
-          <h3>ChatGPT</h3><p>Roteiros, revisão de texto, ideias e apoio a estudos.</p>
-        </a>
         <a class="linkCard" href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noreferrer">
           <h3>MDN Web Docs</h3><p>Documentação HTML/CSS/JS.</p>
+        </a>
+        <a class="linkCard" href="https://www.canva.com/" target="_blank" rel="noreferrer">
+          <h3>Canva</h3><p>Design rápido para apresentações e materiais.</p>
         </a>
       </div>
     </div>
