@@ -35,6 +35,10 @@ body{
 a{color:inherit;text-decoration:none}
 .container{width:min(1120px,92%);margin:0 auto}
 
+.hidden{display:none}
+.muted{color:var(--muted)}
+.small{font-size:.92rem}
+
 /* Topbar */
 .topbar{
   position:sticky;top:0;z-index:50;
@@ -52,7 +56,7 @@ a{color:inherit;text-decoration:none}
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   box-shadow:0 0 0 4px rgba(110,168,255,.12);
 }
-.topbar__actions{display:flex;align-items:center;gap:10px}
+.topbar__actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 
 /* Search */
 .search{position:relative}
@@ -71,6 +75,7 @@ a{color:inherit;text-decoration:none}
   color:var(--muted);
 }
 
+/* Buttons */
 .btn{
   border:1px solid var(--line);
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 55%, transparent), color-mix(in srgb, var(--accent2) 40%, transparent));
@@ -83,7 +88,9 @@ a{color:inherit;text-decoration:none}
 }
 .btn--ghost{background:transparent;box-shadow:none}
 .btn:hover{transform:translateY(-1px)}
+.admin-controls{display:flex;gap:8px;align-items:center}
 
+/* Nav */
 .nav{padding:0 0 12px}
 .nav__toggle{
   display:none;
@@ -119,6 +126,7 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
 .stat__num{font-size:1.5rem;font-weight:900;display:block}
 .stat__label{color:var(--muted);font-size:.95rem}
 
+/* Panels */
 .panel{
   border:1px solid var(--line);
   border-radius:var(--radius);
@@ -131,7 +139,6 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
 .panel--stack{display:flex;flex-direction:column;gap:12px}
 .panel__head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .divider{height:1px;background:var(--line);border-radius:999px}
-.small{font-size:.92rem}
 
 /* Deliveries */
 .deliveries{display:grid;gap:10px}
@@ -162,17 +169,13 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
   color:var(--text);
   font-weight:900;
 }
-.quick__btn:hover{
-  background: color-mix(in srgb, var(--accent) 16%, transparent);
-}
+.quick__btn:hover{background: color-mix(in srgb, var(--accent) 16%, transparent);}
 
-/* Pills/Chips */
 .pill{
   padding:7px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);
   background: transparent;font-weight:700;font-size:.9rem;
 }
 .pill--ok{color: color-mix(in srgb, var(--accent2) 60%, var(--text));}
-.muted{color:var(--muted)}
 
 /* Sections */
 .section{padding:56px 0}
@@ -238,12 +241,7 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
 .dot--blue{background:#3b82f6}
 
 /* Board */
-.board{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  align-items: start;
-}
+.board{display:grid;grid-template-columns: repeat(3, 1fr);gap: 14px;align-items: start}
 .note{
   border:1px solid var(--line);
   border-radius: var(--radius);
@@ -253,23 +251,14 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
 }
 .note--red{ outline: 2px solid rgba(255,90,102,.25); }
 .note--blue{ outline: 2px solid rgba(59,130,246,.22); }
-.note.is-done{ opacity:.7; filter: grayscale(.2); }
 .note__head{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
 .note__tag{font-weight:900}
 .note__date{color:var(--muted);font-weight:800}
 .note h3{margin:10px 0 6px}
 .note p{margin:0;color:var(--muted);line-height:1.45}
-.note__btn{
-  margin-top:12px;width:100%;
-  border:1px dashed var(--line);
-  background: transparent;
-  color: var(--text);
-  padding: 10px 12px;
-  border-radius: 14px;
-  cursor: pointer;
-  font-weight: 800;
-}
-.note__btn:hover{border-style:solid}
+
+.item-actions{display:flex;gap:8px;margin-top:10px}
+.item-actions .btn{padding:8px 10px;font-size:.9rem}
 
 /* Agenda */
 .agenda{
@@ -280,7 +269,7 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
 }
 .agenda__row{
   display:grid;
-  grid-template-columns: 90px 1fr 90px;
+  grid-template-columns: 110px 1fr 90px;
   gap: 10px;
   padding: 12px 14px;
   background: color-mix(in srgb, var(--panel) 92%, transparent);
@@ -314,6 +303,59 @@ h1{font-size: clamp(28px, 4vw, 44px); margin:12px 0 10px; line-height:1.1}
 .footer__inner{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .toTop{color:var(--muted)}
 .toTop:hover{color:var(--text)}
+
+/* Modal editor */
+.modal{
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  padding: 28px;
+  background: rgba(2,6,23,0.5);
+  z-index: 9999;
+}
+.modal.hidden{display:none}
+.modal__inner{
+  width: min(720px, 96%);
+  border-radius: 14px;
+  padding: 18px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--panel) 96%, transparent), color-mix(in srgb, var(--panel) 90%, transparent));
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.modal__inner input,
+.modal__inner textarea,
+.modal__inner select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background: transparent;
+  color:var(--text);
+  margin-top:8px;
+}
+.modal__inner label{display:block;margin-top:8px;font-weight:700;color:var(--muted)}
+
+/* Admin page */
+.adminPage{display:grid;place-items:center;min-height: calc(100vh - 120px);}
+.adminTitle{margin:0 0 8px}
+.adminLabel{display:block;margin-top:10px;font-weight:800;color:var(--muted)}
+.adminInput{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  margin-top:8px;
+}
+.adminButtons{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.adminMsg{
+  margin-top:12px;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: rgba(59,130,246,.12);
+}
+.adminMsg--error{background: rgba(255,90,102,.14)}
 
 /* Responsive */
 @media (max-width: 980px){
