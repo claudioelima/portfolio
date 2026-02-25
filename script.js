@@ -1,89 +1,100 @@
-// ===== Ano automático no rodapé
+// Ano no rodapé
 document.getElementById("ano").textContent = new Date().getFullYear();
 
-// ===== Menu mobile
-const btnMenu = document.getElementById("btnMenu");
-const menuLinks = document.getElementById("menuLinks");
+// Tema (dark/light) com memória
+const btnTheme = document.getElementById("btnTheme");
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") document.documentElement.setAttribute("data-theme", "light");
 
-btnMenu?.addEventListener("click", () => {
-  const isOpen = menuLinks.classList.toggle("is-open");
-  btnMenu.setAttribute("aria-expanded", String(isOpen));
-});
-
-// Fecha menu ao clicar em um link (mobile)
-menuLinks?.addEventListener("click", (e) => {
-  if (e.target.tagName === "A") {
-    menuLinks.classList.remove("is-open");
-    btnMenu.setAttribute("aria-expanded", "false");
+btnTheme.addEventListener("click", () => {
+  const isLight = document.documentElement.getAttribute("data-theme") === "light";
+  if (isLight) {
+    document.documentElement.removeAttribute("data-theme");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
   }
 });
 
-// ===== Tema (dark/light) com memória
-const btnTheme = document.getElementById("btnTheme");
-const savedTheme = localStorage.getItem("theme");
-if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
+// Menu mobile
+const btnMenu = document.getElementById("btnMenu");
+const menuLinks = document.getElementById("menuLinks");
 
-btnTheme?.addEventListener("click", () => {
-  const current = document.documentElement.getAttribute("data-theme");
-  const next = current === "light" ? "" : "light";
-  if (next) document.documentElement.setAttribute("data-theme", next);
-  else document.documentElement.removeAttribute("data-theme");
-  localStorage.setItem("theme", next || "dark");
+btnMenu.addEventListener("click", () => {
+  const open = menuLinks.classList.toggle("is-open");
+  btnMenu.setAttribute("aria-expanded", String(open));
 });
 
-// ===== Filtro de projetos
-const filters = document.querySelectorAll(".filter");
-const projects = document.querySelectorAll(".project");
-
-filters.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    filters.forEach((b) => b.classList.remove("is-active"));
-    btn.classList.add("is-active");
-
-    const filter = btn.dataset.filter;
-    projects.forEach((card) => {
-      const cat = card.dataset.cat;
-      const show = filter === "todos" || cat === filter;
-      card.style.display = show ? "block" : "none";
-    });
-  });
-});
-
-// ===== Contador animado (stats)
+// Contadores (stats)
 function animateCounter(el, to) {
-  const duration = 850;
+  const duration = 800;
   const start = performance.now();
-  const from = 0;
-
   function tick(now) {
     const t = Math.min((now - start) / duration, 1);
-    const value = Math.floor(from + (to - from) * t);
-    el.textContent = value;
+    el.textContent = Math.floor(to * t);
     if (t < 1) requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);
 }
-
 const counters = document.querySelectorAll("[data-counter]");
-const observer = new IntersectionObserver((entries, obs) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const to = Number(el.getAttribute("data-counter")) || 0;
-      animateCounter(el, to);
-      obs.unobserve(el);
+const obs = new IntersectionObserver((entries, o) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target, Number(e.target.dataset.counter || 0));
+      o.unobserve(e.target);
     }
   });
 }, { threshold: 0.4 });
+counters.forEach(el => obs.observe(el));
 
-counters.forEach((el) => observer.observe(el));
-
-// ===== Formulário (simulação)
-const form = document.getElementById("contactForm");
-const formMsg = document.getElementById("formMsg");
-
-form?.addEventListener("submit", (e) => {
-  e.preventDefault();
-  formMsg.textContent = "Mensagem enviada (simulação). Configure um serviço de formulário se quiser envio real.";
-  form.reset();
+// ====== Mural: concluir avisos
+document.querySelectorAll('[data-action="toggle"]').forEach(btn => {
+  btn.addEventListener("click", () => {
+    const note = btn.closest(".note");
+    note.classList.toggle("is-done");
+    btn.textContent = note.classList.contains("is-done")
+      ? "Concluído ✅ (desfazer)"
+      : "Marcar como concluído";
+  });
 });
+
+// ====== Filtro por disciplina (avisos)
+const filterBtns = document.querySelectorAll(".filter");
+const notes = document.querySelectorAll(".note");
+
+function applyFilters() {
+  const activeFilter = document.querySelector(".filter.is-active")?.dataset.filter || "todos";
+  const q = (document.getElementById("searchInput").value || "").toLowerCase().trim();
+
+  // Filtrar avisos
+  notes.forEach(note => {
+    const cat = note.dataset.cat;
+    const text = (note.dataset.text || note.textContent || "").toLowerCase();
+    const byCat = (activeFilter === "todos" || cat === activeFilter);
+    const byText = (!q || text.includes(q));
+    note.style.display = (byCat && byText) ? "block" : "none";
+  });
+
+  // Filtrar disciplinas (cards)
+  document.querySelectorAll(".cardDisc").forEach(card => {
+    const name = (card.dataset.name || "").toLowerCase();
+    const tag = (card.dataset.tag || "").toLowerCase();
+    const byText = (!q || name.includes(q) || tag.includes(q));
+    card.style.display = byText ? "block" : "none";
+  });
+}
+
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach(b => b.classList.remove("is-active"));
+    btn.classList.add("is-active");
+    applyFilters();
+  });
+});
+
+// Busca (topo)
+document.getElementById("searchInput").addEventListener("input", applyFilters);
+
+// Primeira aplicação
+applyFilters();
