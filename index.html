@@ -9,7 +9,6 @@
 </head>
 
 <body>
-  <!-- Topbar -->
   <header class="topbar">
     <div class="container topbar__inner">
       <a class="brand" href="#inicio" aria-label="Ir para o início">
@@ -25,10 +24,10 @@
 
         <button class="btn btn--ghost" id="btnTheme" type="button" aria-label="Alternar tema">🌙/☀️</button>
 
-        <!-- Admin controls -->
-        <div id="adminControls" class="admin-controls">
-          <button class="btn btn--ghost" id="btnAdminLogin">Entrar (Admin)</button>
-          <button class="btn btn--ghost hidden" id="btnAdminLogout">Sair (Admin)</button>
+        <!-- Admin -->
+        <div class="admin-controls">
+          <a class="btn btn--ghost" id="btnAdminLogin" href="admin.html">Entrar (Admin)</a>
+          <button class="btn btn--ghost hidden" id="btnAdminLogout" type="button">Sair (Admin)</button>
         </div>
 
         <button class="nav__toggle" id="btnMenu" aria-expanded="false" aria-controls="menuLinks">☰</button>
@@ -72,7 +71,6 @@
         </div>
       </section>
 
-      <!-- Painel Útil -->
       <aside class="hero__panel">
         <div class="panel panel--glass panel--stack">
           <div class="panel__head">
@@ -80,9 +78,7 @@
             <span class="pill pill--ok">Atualize as datas</span>
           </div>
 
-          <div id="deliveriesPreview" class="deliveries" role="list">
-            <!-- preenchido por JS -->
-          </div>
+          <div id="deliveriesPreview" class="deliveries" role="list"></div>
 
           <div class="divider" aria-hidden="true"></div>
 
@@ -97,9 +93,7 @@
             <a class="quick__btn" href="#" target="_blank" rel="noreferrer">Calendário</a>
           </div>
 
-          <p class="muted small">
-            💡 Dica: use a busca no topo para filtrar disciplinas e avisos.
-          </p>
+          <p class="muted small">💡 Dica: use a busca no topo para filtrar disciplinas e avisos.</p>
         </div>
       </aside>
     </div>
@@ -114,101 +108,76 @@
       </div>
 
       <div class="grid grid--3" id="disciplinasGrid">
-        <!-- Troque os links pelos seus repositórios -->
         <article class="cardDisc" data-name="Gestão de Projetos" data-tag="gestao">
           <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/gestao-de-projetos" target="_blank" rel="noreferrer">
             <div class="cardDisc__top">
-              <span class="pill">Gestão</span>
-              <span class="pill pill--ok">Repositório</span>
+              <span class="pill">Gestão</span><span class="pill pill--ok">Repositório</span>
             </div>
             <h3>Gestão de Projetos</h3>
             <p>Planejamento, cronograma, escopo, riscos, entregas e validações.</p>
-            <div class="cardDisc__footer">
-              <span class="muted">Abrir no GitHub →</span>
-              <span class="badgeMini">GP</span>
-            </div>
+            <div class="cardDisc__footer"><span class="muted">Abrir no GitHub →</span><span class="badgeMini">GP</span></div>
           </a>
         </article>
 
         <article class="cardDisc" data-name="Gestão e Governança de TI" data-tag="ti">
           <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/governanca-ti" target="_blank" rel="noreferrer">
             <div class="cardDisc__top">
-              <span class="pill">TI</span>
-              <span class="pill pill--ok">Repositório</span>
+              <span class="pill">TI</span><span class="pill pill--ok">Repositório</span>
             </div>
             <h3>Gestão e Governança de TI</h3>
             <p>COBIT/ITIL, indicadores, processos, compliance e estratégia.</p>
-            <div class="cardDisc__footer">
-              <span class="muted">Abrir no GitHub →</span>
-              <span class="badgeMini">GTI</span>
-            </div>
+            <div class="cardDisc__footer"><span class="muted">Abrir no GitHub →</span><span class="badgeMini">GTI</span></div>
           </a>
         </article>
 
         <article class="cardDisc" data-name="Programação Web II" data-tag="web">
           <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/programacao-web-ii" target="_blank" rel="noreferrer">
             <div class="cardDisc__top">
-              <span class="pill">Web</span>
-              <span class="pill pill--ok">Repositório</span>
+              <span class="pill">Web</span><span class="pill pill--ok">Repositório</span>
             </div>
             <h3>Programação Web II</h3>
             <p>Front-end, integrações, boas práticas e projetos práticos.</p>
-            <div class="cardDisc__footer">
-              <span class="muted">Abrir no GitHub →</span>
-              <span class="badgeMini">WEB2</span>
-            </div>
+            <div class="cardDisc__footer"><span class="muted">Abrir no GitHub →</span><span class="badgeMini">WEB2</span></div>
           </a>
         </article>
 
         <article class="cardDisc" data-name="Sistemas de Informação" data-tag="si">
           <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/sistemas-de-informacao" target="_blank" rel="noreferrer">
             <div class="cardDisc__top">
-              <span class="pill">SI</span>
-              <span class="pill pill--ok">Repositório</span>
+              <span class="pill">SI</span><span class="pill pill--ok">Repositório</span>
             </div>
             <h3>Sistemas de Informação</h3>
             <p>Conceitos, processos, modelagem e apoio à decisão.</p>
-            <div class="cardDisc__footer">
-              <span class="muted">Abrir no GitHub →</span>
-              <span class="badgeMini">SI</span>
-            </div>
+            <div class="cardDisc__footer"><span class="muted">Abrir no GitHub →</span><span class="badgeMini">SI</span></div>
           </a>
         </article>
 
         <article class="cardDisc" data-name="Engenharia de Software II" data-tag="es">
           <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/engenharia-de-software-ii" target="_blank" rel="noreferrer">
             <div class="cardDisc__top">
-              <span class="pill">Engenharia</span>
-              <span class="pill pill--ok">Repositório</span>
+              <span class="pill">Engenharia</span><span class="pill pill--ok">Repositório</span>
             </div>
             <h3>Engenharia de Software II</h3>
             <p>Requisitos, arquitetura, testes, qualidade e versionamento.</p>
-            <div class="cardDisc__footer">
-              <span class="muted">Abrir no GitHub →</span>
-              <span class="badgeMini">ES2</span>
-            </div>
+            <div class="cardDisc__footer"><span class="muted">Abrir no GitHub →</span><span class="badgeMini">ES2</span></div>
           </a>
         </article>
 
         <article class="cardDisc" data-name="Informática Aplicada à Logística" data-tag="log">
           <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/informatica-logistica" target="_blank" rel="noreferrer">
             <div class="cardDisc__top">
-              <span class="pill">Logística</span>
-              <span class="pill pill--ok">Repositório</span>
+              <span class="pill">Logística</span><span class="pill pill--ok">Repositório</span>
             </div>
             <h3>Informática Aplicada à Logística</h3>
             <p>Planilhas, indicadores, organização, documentos e rotinas.</p>
-            <div class="cardDisc__footer">
-              <span class="muted">Abrir no GitHub →</span>
-              <span class="badgeMini">LOG</span>
-            </div>
+            <div class="cardDisc__footer"><span class="muted">Abrir no GitHub →</span><span class="badgeMini">LOG</span></div>
           </a>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Mural de avisos -->
+  <!-- Mural -->
   <section id="avisos" class="section section--alt">
     <div class="container">
       <div class="section__header">
@@ -233,19 +202,11 @@
           <span class="dot dot--blue"></span><span class="muted">Importante</span>
         </div>
 
-        <!-- admin add button -->
-        <div class="admin-actions" id="adminAddNoteArea">
-          <!-- preenchido por JS quando admin estiver logado -->
-        </div>
+        <div class="admin-actions" id="adminAddNoteArea"></div>
       </div>
 
-      <div class="board" id="board">
-        <!-- preenchido por JS -->
-      </div>
-
-      <p class="muted hint">
-        💡 Dica: a busca no topo filtra disciplina e texto dos avisos em tempo real.
-      </p>
+      <div class="board" id="board"></div>
+      <p class="muted hint">💡 Dica: a busca no topo filtra disciplina e texto dos avisos em tempo real.</p>
     </div>
   </section>
 
@@ -257,19 +218,14 @@
         <p>Um resumo do que vem pela frente (edite as datas).</p>
       </div>
 
-      <div class="agenda" id="agendaContainer">
-        <!-- preenchido por JS -->
-      </div>
-
+      <div class="agenda" id="agendaContainer"></div>
       <div style="margin-top:12px;">
-        <div id="adminAddAgendaArea">
-          <!-- preenchido por JS quando admin estiver logado -->
-        </div>
+        <div id="adminAddAgendaArea"></div>
       </div>
     </div>
   </section>
 
-  <!-- Links úteis -->
+  <!-- Links -->
   <section id="links" class="section section--alt">
     <div class="container">
       <div class="section__header">
@@ -298,26 +254,11 @@
     </div>
   </footer>
 
-  <!-- Admin Login Modal (simple) -->
-  <div id="adminModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
-    <div class="modal__inner panel">
-      <h3 id="adminModalTitle">Login do Admin</h3>
-      <p class="muted">Entre com a senha de administrador para editar avisos e agenda.</p>
-      <input id="adminPasswordInput" type="password" placeholder="Senha do admin" />
-      <div style="display:flex;gap:8px;margin-top:12px;">
-        <button id="adminLoginSubmit" class="btn">Entrar</button>
-        <button id="adminLoginCancel" class="btn btn--ghost">Cancelar</button>
-      </div>
-      <p class="muted small">A senha é verificada no navegador — altere-a no arquivo script.js conforme necessário.</p>
-    </div>
-  </div>
-
-  <!-- Note / Agenda editor modal (used for create/edit) -->
+  <!-- Editor modal (somente para CRUD de avisos/agenda) -->
   <div id="editorModal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="modal__inner panel">
       <h3 id="editorTitle">Editor</h3>
 
-      <!-- Note editor -->
       <div id="noteEditor">
         <label>Título<input id="noteTitle" type="text" /></label>
         <label>Disciplina
@@ -341,7 +282,6 @@
         <label>Texto<textarea id="noteText" rows="4"></textarea></label>
       </div>
 
-      <!-- Agenda editor -->
       <div id="agendaEditor" class="hidden">
         <label>Data<input id="agendaDate" type="date" /></label>
         <label>Título<input id="agendaTitle" type="text" /></label>
