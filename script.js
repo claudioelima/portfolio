@@ -1,6 +1,6 @@
 /* ========= CONFIG ========= */
 // MUDE AQUI a senha (deixe igual no admin.html também)
-const ADMIN_PASSWORD = "sua-senha-admin-aqui";
+const ADMIN_PASSWORD = "Fatec@20261";
 
 const LS_KEYS = {
   NOTES: "acad_notes_v1",
