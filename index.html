@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfólio | Seu Nome</title>
-  <meta name="description" content="Portfólio acadêmico e profissional com projetos, habilidades e contato."/>
+  <title>Página Acadêmica | Disciplinas</title>
+  <meta name="description" content="Central acadêmica com disciplinas, repositórios e mural de avisos."/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 
@@ -14,294 +14,335 @@
     <div class="container topbar__inner">
       <a class="brand" href="#inicio" aria-label="Ir para o início">
         <span class="brand__dot" aria-hidden="true"></span>
-        <span class="brand__text">Seu Nome</span>
+        <span class="brand__text">Central Acadêmica</span>
       </a>
 
-      <nav class="nav" aria-label="Menu principal">
-        <button class="nav__toggle" id="btnMenu" aria-expanded="false" aria-controls="menuLinks">
-          ☰ Menu
-        </button>
-        <div class="nav__links" id="menuLinks">
-          <a href="#sobre">Sobre</a>
-          <a href="#habilidades">Habilidades</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#eventos">Eventos</a>
-          <a href="#contato">Contato</a>
+      <div class="topbar__actions">
+        <div class="search">
+          <input id="searchInput" type="search" placeholder="Pesquisar disciplina ou aviso..." aria-label="Pesquisar"/>
+          <span class="search__icon" aria-hidden="true">⌕</span>
         </div>
-      </nav>
+
+        <button class="btn btn--ghost" id="btnTheme" type="button" aria-label="Alternar tema">🌙/☀️</button>
+
+        <button class="nav__toggle" id="btnMenu" aria-expanded="false" aria-controls="menuLinks">☰</button>
+      </div>
     </div>
+
+    <nav class="nav container" aria-label="Menu principal">
+      <div class="nav__links" id="menuLinks">
+        <a href="#disciplinas">Disciplinas</a>
+        <a href="#avisos">Mural de avisos</a>
+        <a href="#calendario">Agenda</a>
+        <a href="#links">Links úteis</a>
+      </div>
+    </nav>
   </header>
 
   <!-- Hero -->
   <main id="inicio" class="hero">
     <div class="container hero__grid">
-      <div class="hero__text">
-        <p class="badge">Portfólio Acadêmico</p>
-        <h1>Olá! Eu sou <span class="highlight">Seu Nome</span>.</h1>
+      <section class="hero__text">
+        <p class="badge">Página Acadêmica</p>
+        <h1>Disciplinas + Repositórios + Avisos</h1>
         <p class="lead">
-          Estudante de <strong>Seu Curso</strong> • Foco em <strong>Front-end</strong>, <strong>Back-end</strong> e projetos práticos.
+          Clique em uma disciplina para acessar o repositório da turma.
+          Use a busca para encontrar avisos e conteúdos rapidamente.
         </p>
-
-        <div class="hero__actions">
-          <a class="btn" href="#projetos">Ver projetos</a>
-          <a class="btn btn--ghost" href="#contato">Falar comigo</a>
-        </div>
 
         <div class="hero__stats" role="list">
           <div class="stat" role="listitem">
             <span class="stat__num" data-counter="6">0</span>
-            <span class="stat__label">Projetos</span>
-          </div>
-          <div class="stat" role="listitem">
-            <span class="stat__num" data-counter="3">0</span>
-            <span class="stat__label">Certificações</span>
+            <span class="stat__label">Disciplinas</span>
           </div>
           <div class="stat" role="listitem">
             <span class="stat__num" data-counter="12">0</span>
-            <span class="stat__label">Meses estudando</span>
+            <span class="stat__label">Avisos (exemplo)</span>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat__num" data-counter="1">0</span>
+            <span class="stat__label">Central única</span>
           </div>
         </div>
-      </div>
+      </section>
 
-      <aside class="hero__card" aria-label="Cartão de perfil">
-        <div class="avatar" aria-hidden="true">
-          <!-- Se quiser usar foto: coloque img/perfil.jpg e descomente abaixo -->
-          <!-- <img src="img/perfil.jpg" alt="Foto de perfil"> -->
-          <span>🙂</span>
-        </div>
-
-        <div class="card">
-          <h2>Resumo rápido</h2>
-          <ul class="checklist">
-            <li>✅ HTML, CSS e JavaScript</li>
-            <li>✅ Projetos com GitHub</li>
-            <li>✅ Interesse em estágios/colaborações</li>
-          </ul>
-
-          <div class="card__row">
-            <a class="chip" href="https://github.com/seuusuario" target="_blank" rel="noreferrer">GitHub</a>
-            <a class="chip" href="https://www.linkedin.com/in/seuusuario" target="_blank" rel="noreferrer">LinkedIn</a>
+      <aside class="hero__panel">
+        <div class="panel panel--glass">
+          <h2>📌 Como usar</h2>
+          <ol class="steps">
+            <li>Escolha a disciplina</li>
+            <li>Abra o repositório</li>
+            <li>Veja avisos e datas</li>
+            <li>Baixe materiais e atividades</li>
+          </ol>
+          <div class="chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">GitHub Pages</span>
           </div>
         </div>
       </aside>
     </div>
   </main>
 
-  <!-- Sobre -->
-  <section id="sobre" class="section">
+  <!-- Disciplinas -->
+  <section id="disciplinas" class="section">
     <div class="container">
       <div class="section__header">
-        <h2>Sobre mim</h2>
-        <p>Uma apresentação clara e objetiva (3–6 linhas).</p>
+        <h2>Disciplinas</h2>
+        <p>Abra o repositório correspondente com 1 clique.</p>
       </div>
 
-      <div class="grid grid--2">
-        <div class="panel">
-          <h3>Minha história</h3>
-          <p>
-            Escreva aqui um resumo do seu objetivo: estágio, primeiro emprego, freela, etc.
-            Fale rapidamente do que você gosta de construir e aprender.
-          </p>
-          <p class="muted">
-            Dica: use dados reais (curso, semestre, instituição, metas).
-          </p>
+      <div class="grid grid--3" id="disciplinasGrid">
+        <!-- Troque os links pelos seus repositórios -->
+        <article class="cardDisc" data-name="Gestão de Projetos" data-tag="gestao">
+          <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/gestao-de-projetos" target="_blank" rel="noreferrer">
+            <div class="cardDisc__top">
+              <span class="pill">Gestão</span>
+              <span class="pill pill--ok">Repositório</span>
+            </div>
+            <h3>Gestão de Projetos</h3>
+            <p>Planejamento, cronograma, escopo, riscos, entregas e validações.</p>
+            <div class="cardDisc__footer">
+              <span class="muted">Abrir no GitHub →</span>
+              <span class="badgeMini">GP</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="cardDisc" data-name="Gestão e Governança de TI" data-tag="ti">
+          <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/governanca-ti" target="_blank" rel="noreferrer">
+            <div class="cardDisc__top">
+              <span class="pill">TI</span>
+              <span class="pill pill--ok">Repositório</span>
+            </div>
+            <h3>Gestão e Governança de TI</h3>
+            <p>COBIT/ITIL, indicadores, processos, compliance e estratégia.</p>
+            <div class="cardDisc__footer">
+              <span class="muted">Abrir no GitHub →</span>
+              <span class="badgeMini">GTI</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="cardDisc" data-name="Programação Web II" data-tag="web">
+          <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/programacao-web-ii" target="_blank" rel="noreferrer">
+            <div class="cardDisc__top">
+              <span class="pill">Web</span>
+              <span class="pill pill--ok">Repositório</span>
+            </div>
+            <h3>Programação Web II</h3>
+            <p>Front-end, integrações, boas práticas e projetos práticos.</p>
+            <div class="cardDisc__footer">
+              <span class="muted">Abrir no GitHub →</span>
+              <span class="badgeMini">WEB2</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="cardDisc" data-name="Sistemas de Informação" data-tag="si">
+          <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/sistemas-de-informacao" target="_blank" rel="noreferrer">
+            <div class="cardDisc__top">
+              <span class="pill">SI</span>
+              <span class="pill pill--ok">Repositório</span>
+            </div>
+            <h3>Sistemas de Informação</h3>
+            <p>Conceitos, processos, modelagem e apoio à decisão.</p>
+            <div class="cardDisc__footer">
+              <span class="muted">Abrir no GitHub →</span>
+              <span class="badgeMini">SI</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="cardDisc" data-name="Engenharia de Software II" data-tag="es">
+          <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/engenharia-de-software-ii" target="_blank" rel="noreferrer">
+            <div class="cardDisc__top">
+              <span class="pill">Engenharia</span>
+              <span class="pill pill--ok">Repositório</span>
+            </div>
+            <h3>Engenharia de Software II</h3>
+            <p>Requisitos, arquitetura, testes, qualidade e versionamento.</p>
+            <div class="cardDisc__footer">
+              <span class="muted">Abrir no GitHub →</span>
+              <span class="badgeMini">ES2</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="cardDisc" data-name="Informática Aplicada à Logística" data-tag="log">
+          <a class="cardDisc__link" href="https://github.com/SEUUSUARIO/informatica-logistica" target="_blank" rel="noreferrer">
+            <div class="cardDisc__top">
+              <span class="pill">Logística</span>
+              <span class="pill pill--ok">Repositório</span>
+            </div>
+            <h3>Informática Aplicada à Logística</h3>
+            <p>Planilhas, indicadores, organização, documentos e rotinas.</p>
+            <div class="cardDisc__footer">
+              <span class="muted">Abrir no GitHub →</span>
+              <span class="badgeMini">LOG</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mural de avisos -->
+  <section id="avisos" class="section section--alt">
+    <div class="container">
+      <div class="section__header">
+        <h2>Mural de avisos</h2>
+        <p>Filtre por disciplina e acompanhe prazos, materiais e lembretes.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filtrar avisos">
+          <button class="filter is-active" data-filter="todos">Todos</button>
+          <button class="filter" data-filter="gestao">Gestão de Projetos</button>
+          <button class="filter" data-filter="ti">Governança de TI</button>
+          <button class="filter" data-filter="web">Web II</button>
+          <button class="filter" data-filter="si">SI</button>
+          <button class="filter" data-filter="es">Eng. Soft II</button>
+          <button class="filter" data-filter="log">Logística</button>
         </div>
 
-        <div class="panel">
-          <h3>Formação</h3>
-          <ul class="list">
-            <li><strong>Curso:</strong> Nome do curso — Instituição (Ano–Ano)</li>
-            <li><strong>Curso:</strong> Nome do curso — Instituição (Ano–Ano)</li>
-            <li><strong>Extras:</strong> Monitoria, iniciação, projetos integradores…</li>
-          </ul>
+        <div class="legend">
+          <span class="dot dot--red"></span><span class="muted">Pendente</span>
+          <span class="dot dot--green"></span><span class="muted">Concluído</span>
+          <span class="dot dot--blue"></span><span class="muted">Importante</span>
+        </div>
+      </div>
+
+      <div class="board" id="board">
+        <!-- Exemplo de avisos (edite à vontade) -->
+        <article class="note note--blue" data-cat="gestao" data-text="Validação 1 do projeto: entregar escopo e cronograma.">
+          <header class="note__head">
+            <span class="note__tag">Gestão de Projetos</span>
+            <span class="note__date">📅 10/03</span>
+          </header>
+          <h3>Validação 1</h3>
+          <p>Entregar escopo + cronograma + riscos iniciais no repositório.</p>
+          <button class="note__btn" data-action="toggle">Marcar como concluído</button>
+        </article>
+
+        <article class="note" data-cat="web" data-text="Atividade: criar layout responsivo com grid e JS para filtro.">
+          <header class="note__head">
+            <span class="note__tag">Programação Web II</span>
+            <span class="note__date">📅 12/03</span>
+          </header>
+          <h3>Atividade 01</h3>
+          <p>Layout responsivo + filtro por categoria + função de busca.</p>
+          <button class="note__btn" data-action="toggle">Marcar como concluído</button>
+        </article>
+
+        <article class="note note--red" data-cat="ti" data-text="Trabalho: mapa de processos e indicadores de governança.">
+          <header class="note__head">
+            <span class="note__tag">Governança de TI</span>
+            <span class="note__date">📅 15/03</span>
+          </header>
+          <h3>Entrega: Indicadores</h3>
+          <p>Definir 5 KPIs (com fórmula e meta) para um cenário de TI.</p>
+          <button class="note__btn" data-action="toggle">Marcar como concluído</button>
+        </article>
+
+        <article class="note" data-cat="es" data-text="Aula: casos de uso + critérios de aceitação + testes.">
+          <header class="note__head">
+            <span class="note__tag">Engenharia de Software II</span>
+            <span class="note__date">📅 18/03</span>
+          </header>
+          <h3>Checklist de qualidade</h3>
+          <p>Atualizar user stories + critérios + casos de teste no repositório.</p>
+          <button class="note__btn" data-action="toggle">Marcar como concluído</button>
+        </article>
+
+        <article class="note note--blue" data-cat="si" data-text="Leitura: conceitos de SI + apoio à decisão.">
+          <header class="note__head">
+            <span class="note__tag">Sistemas de Informação</span>
+            <span class="note__date">📅 20/03</span>
+          </header>
+          <h3>Leitura dirigida</h3>
+          <p>Resumo de 1 página + exemplo prático no contexto da empresa.</p>
+          <button class="note__btn" data-action="toggle">Marcar como concluído</button>
+        </article>
+
+        <article class="note" data-cat="log" data-text="Planilha: indicadores logísticos + gráfico + dashboard simples.">
+          <header class="note__head">
+            <span class="note__tag">Informática na Logística</span>
+            <span class="note__date">📅 22/03</span>
+          </header>
+          <h3>Planilha de indicadores</h3>
+          <p>Montar tabela + PROCV/PROCX + gráfico e análise.</p>
+          <button class="note__btn" data-action="toggle">Marcar como concluído</button>
+        </article>
+      </div>
+
+      <p class="muted hint">
+        💡 Dica: a busca no topo filtra disciplina e texto dos avisos em tempo real.
+      </p>
+    </div>
+  </section>
+
+  <!-- Agenda -->
+  <section id="calendario" class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2>Agenda (mini)</h2>
+        <p>Um resumo do que vem pela frente (edite as datas).</p>
+      </div>
+
+      <div class="agenda">
+        <div class="agenda__row">
+          <span class="agenda__date">10/03</span>
+          <span class="agenda__title">Validação 1 — Gestão de Projetos</span>
+          <span class="agenda__status badgeOk">Prazo</span>
+        </div>
+        <div class="agenda__row">
+          <span class="agenda__date">12/03</span>
+          <span class="agenda__title">Atividade 01 — Web II</span>
+          <span class="agenda__status badgeOk">Prazo</span>
+        </div>
+        <div class="agenda__row">
+          <span class="agenda__date">15/03</span>
+          <span class="agenda__title">KPIs — Governança de TI</span>
+          <span class="agenda__status badgeOk">Prazo</span>
+        </div>
+        <div class="agenda__row">
+          <span class="agenda__date">22/03</span>
+          <span class="agenda__title">Planilha — Informática na Logística</span>
+          <span class="agenda__status badgeOk">Prazo</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Habilidades -->
-  <section id="habilidades" class="section section--alt">
+  <!-- Links úteis -->
+  <section id="links" class="section section--alt">
     <div class="container">
       <div class="section__header">
-        <h2>Habilidades</h2>
-        <p>Técnicas e comportamentais (soft skills).</p>
+        <h2>Links úteis</h2>
+        <p>Acesso rápido para ferramentas e ambientes.</p>
       </div>
 
       <div class="grid grid--3">
-        <div class="panel">
-          <h3>Front-end</h3>
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Responsivo</span>
-          </div>
-        </div>
-
-        <div class="panel">
-          <h3>Back-end</h3>
-          <div class="tags">
-            <span class="tag">Node.js (básico)</span>
-            <span class="tag">APIs (básico)</span>
-            <span class="tag">Banco de dados</span>
-          </div>
-        </div>
-
-        <div class="panel">
-          <h3>Soft Skills</h3>
-          <div class="tags">
-            <span class="tag">Comunicação</span>
-            <span class="tag">Organização</span>
-            <span class="tag">Trabalho em equipe</span>
-            <span class="tag">Aprendizado contínuo</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projetos -->
-  <section id="projetos" class="section">
-    <div class="container">
-      <div class="section__header">
-        <h2>Projetos</h2>
-        <p>Adicione links do GitHub e uma demo (se tiver).</p>
-      </div>
-
-      <div class="filters" aria-label="Filtros de projetos">
-        <button class="filter is-active" data-filter="todos">Todos</button>
-        <button class="filter" data-filter="frontend">Front-end</button>
-        <button class="filter" data-filter="backend">Back-end</button>
-        <button class="filter" data-filter="outros">Outros</button>
-      </div>
-
-      <div class="grid grid--3" id="projetosGrid">
-        <!-- Card 1 -->
-        <article class="project" data-cat="frontend">
-          <h3>Portfólio Acadêmico</h3>
-          <p>Site responsivo com seções, filtros e modo escuro.</p>
-          <div class="project__meta">
-            <span class="pill">HTML</span>
-            <span class="pill">CSS</span>
-            <span class="pill">JS</span>
-          </div>
-          <div class="project__links">
-            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="#" target="_blank" rel="noreferrer">Demo</a>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="project" data-cat="backend">
-          <h3>API de Tarefas</h3>
-          <p>CRUD simples com rotas e validações básicas.</p>
-          <div class="project__meta">
-            <span class="pill">Node</span>
-            <span class="pill">Express</span>
-          </div>
-          <div class="project__links">
-            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="#" target="_blank" rel="noreferrer">Docs</a>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="project" data-cat="outros">
-          <h3>Dashboard de Estudos</h3>
-          <p>Organização de rotina com metas e checklist.</p>
-          <div class="project__meta">
-            <span class="pill">JS</span>
-            <span class="pill">UI</span>
-          </div>
-          <div class="project__links">
-            <a href="#" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="#" target="_blank" rel="noreferrer">Demo</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Eventos -->
-  <section id="eventos" class="section section--alt">
-    <div class="container">
-      <div class="section__header">
-        <h2>Participações em eventos</h2>
-        <p>Maratona de programação, hackathons, semanas acadêmicas, palestras.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline__item">
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__content">
-            <h3>Maratona de Programação — 2025</h3>
-            <p class="muted">Equipe X • Problemas resolvidos: 3 • Linguagem: C/JS</p>
-            <p>Resumo do que você aprendeu e sua contribuição.</p>
-          </div>
-        </div>
-
-        <div class="timeline__item">
-          <div class="timeline__dot" aria-hidden="true"></div>
-          <div class="timeline__content">
-            <h3>Semana de Tecnologia — 2024</h3>
-            <p class="muted">Palestras e oficinas • Tema: Web/IA</p>
-            <p>Resumo rápido do evento e o que você aplicou depois.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <section id="contato" class="section">
-    <div class="container">
-      <div class="section__header">
-        <h2>Contato</h2>
-        <p>Deixe seus links e/ou um formulário (simples).</p>
-      </div>
-
-      <div class="grid grid--2">
-        <div class="panel">
-          <h3>Me encontre</h3>
-          <ul class="list">
-            <li><strong>Email:</strong> seuemail@exemplo.com</li>
-            <li><strong>WhatsApp:</strong> (xx) xxxxx-xxxx</li>
-            <li><strong>GitHub:</strong> github.com/seuusuario</li>
-            <li><strong>LinkedIn:</strong> linkedin.com/in/seuusuario</li>
-          </ul>
-          <p class="muted">Dica: mantenha seus links atualizados.</p>
-        </div>
-
-        <form class="panel form" id="contactForm">
-          <h3>Mensagem</h3>
-
-          <label>
-            Nome
-            <input type="text" name="nome" placeholder="Seu nome" required />
-          </label>
-
-          <label>
-            Email
-            <input type="email" name="email" placeholder="seuemail@exemplo.com" required />
-          </label>
-
-          <label>
-            Mensagem
-            <textarea name="msg" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
-          </label>
-
-          <button class="btn" type="submit">Enviar</button>
-          <p class="muted" id="formMsg" aria-live="polite"></p>
-        </form>
+        <a class="linkCard" href="https://github.com/" target="_blank" rel="noreferrer">
+          <h3>GitHub</h3><p>Repositórios, issues, entregas e versionamento.</p>
+        </a>
+        <a class="linkCard" href="https://chatgpt.com/" target="_blank" rel="noreferrer">
+          <h3>ChatGPT</h3><p>Roteiros, revisão de texto, ideias e apoio a estudos.</p>
+        </a>
+        <a class="linkCard" href="https://developer.mozilla.org/pt-BR/" target="_blank" rel="noreferrer">
+          <h3>MDN Web Docs</h3><p>Documentação HTML/CSS/JS.</p>
+        </a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© <span id="ano"></span> Seu Nome • Feito com HTML, CSS e JS</p>
-      <button class="btn btn--ghost" id="btnTheme" type="button" aria-label="Alternar tema">🌙/☀️</button>
-      <a class="toTop" href="#inicio" aria-label="Voltar ao topo">↑ Topo</a>
+      <p>© <span id="ano"></span> Central Acadêmica • GitHub Pages</p>
+      <a class="toTop" href="#inicio">↑ Topo</a>
     </div>
   </footer>
 
