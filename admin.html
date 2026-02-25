@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | Central Acadêmica</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html" aria-label="Voltar para Home">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Central Acadêmica</span>
+      </a>
+      <div class="topbar__actions">
+        <button class="btn btn--ghost" id="btnTheme" type="button" aria-label="Alternar tema">🌙/☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="adminPage">
+        <div class="panel panel--glass">
+          <h1 class="adminTitle">🔐 Área do Admin</h1>
+          <p class="muted">Entre com a senha para liberar edição do mural e da agenda na Home.</p>
+
+          <label class="adminLabel">Senha do Admin</label>
+          <input id="adminPassword" class="adminInput" type="password" placeholder="Digite a senha" />
+
+          <div class="adminButtons">
+            <button id="btnLogin" class="btn">Entrar</button>
+            <a class="btn btn--ghost" href="index.html">Cancelar</a>
+          </div>
+
+          <p class="muted small">
+            Dica: a senha é definida no <b>script.js</b> (const <b>ADMIN_PASSWORD</b>).
+          </p>
+
+          <div id="adminMsg" class="adminMsg hidden"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // ===== Tema (mesma lógica do index) =====
+    const btnTheme = document.getElementById("btnTheme");
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "light") document.documentElement.setAttribute("data-theme", "light");
+    btnTheme.addEventListener("click", () => {
+      const isLight = document.documentElement.getAttribute("data-theme") === "light";
+      if (isLight) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    // ===== Login Admin =====
+    const LS_ADMIN = "acad_is_admin_v1";
+    const ADMIN_PASSWORD = "sua-senha-admin-aqui"; // <-- MUDE AQUI TAMBÉM (mesmo valor do script.js)
+
+    const input = document.getElementById("adminPassword");
+    const msg = document.getElementById("adminMsg");
+
+    function showMsg(text, error=false){
+      msg.textContent = text;
+      msg.classList.remove("hidden");
+      msg.classList.toggle("adminMsg--error", error);
+    }
+
+    document.getElementById("btnLogin").addEventListener("click", () => {
+      if ((input.value || "") === ADMIN_PASSWORD) {
+        localStorage.setItem(LS_ADMIN, "1");
+        // volta para a Home já logado
+        window.location.href = "index.html";
+      } else {
+        showMsg("Senha incorreta. Tente novamente.", true);
+        input.focus();
+      }
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") document.getElementById("btnLogin").click();
+    });
+  </script>
+</body>
+</html>
